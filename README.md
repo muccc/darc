@@ -34,22 +34,23 @@ python darc_udp.py
 
 ## Station IDs in Munich
 
-^  ID  ^  IDHex ^ Stop ^ Direction/Destination ^
-| 1509 | 0x05E5 | Schluesselbergstr | Tram 19 -> Pasing |
-| 1510 | 0x05E6 | Schluesselbergstr | Tram 19 -> StVeitstr |
-| 1549 | 0x060D | Grillparzer | Bus 187 -> Ruemelinstr | Bus 190 -> Messe Ost |
-| 1625 | 0x0659 | Adunistr | Bus 53 -> Aidenbachstr |
-| 1626 | 0x065A | Adunistr | Bus 53 -> Muenchner Freiheit |
-| 1642 | 0x066A | Lehel | Tram 18 -> Gondrellplatz |
-| 1701 | 0x06A5 | Einsteinstr | Bus 144 -> Ackermannbogen |
-| 1761 | 0x06E1 | Sendlinger Tor | Bus 62 -> Ostbahnhof |
-| 1775 | 0x06EF | Waltherstr | Bus 62 -> Rotkreuzplatz |
-| 1800 | 0x0708 | Mariannenplatz | Gondrellplatz |
-| 1814 | 0x0716 | Maxmonument | Tram 19 -> StVeitstr |
-| 1818 | 0x071A | Maxmonument | Tram 19 -> Pasing |
-| 1840 | 0x0730 | Mariannenplatz | Effnerplatz |
-| 1923 | 0x0783 | Waltherstr | Bus 62 -> Ostbahnhof | 
-| 1927 | 0x0787 | Isator/Zweibrueckenstr | Bus 132 -> Forstenrieder Park |
+| ID   | ID (Hex) | Stop  | Direction/Destination |
+| ---- |:--------:| :-----|:----------------------|
+| 1509 | 0x05E5   | Schluesselbergstr | Tram 19 -> Pasing |
+| 1510 | 0x05E6   | Schluesselbergstr | Tram 19 -> StVeitstr |
+| 1549 | 0x060D   | Grillparzer | Bus 187 -> Ruemelinstr | Bus 190 -> Messe Ost |
+| 1625 | 0x0659   | Adunistr | Bus 53 -> Aidenbachstr |
+| 1626 | 0x065A   | Adunistr | Bus 53 -> Muenchner Freiheit |
+| 1642 | 0x066A   | Lehel | Tram 18 -> Gondrellplatz |
+| 1701 | 0x06A5   | Einsteinstr | Bus 144 -> Ackermannbogen |
+| 1761 | 0x06E1   | Sendlinger Tor | Bus 62 -> Ostbahnhof |
+| 1775 | 0x06EF   | Waltherstr | Bus 62 -> Rotkreuzplatz |
+| 1800 | 0x0708   | Mariannenplatz | Gondrellplatz |
+| 1814 | 0x0716   | Maxmonument | Tram 19 -> StVeitstr |
+| 1818 | 0x071A   | Maxmonument | Tram 19 -> Pasing |
+| 1840 | 0x0730   | Mariannenplatz | Effnerplatz |
+| 1923 | 0x0783   | Waltherstr | Bus 62 -> Ostbahnhof | 
+| 1927 | 0x0787   | Isator/Zweibrueckenstr | Bus 132 -> Forstenrieder Park |
 
 ## Ressources
 

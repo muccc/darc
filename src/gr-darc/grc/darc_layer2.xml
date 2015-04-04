@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<block>
+  <name>layer2</name>
+  <key>darc_layer2</key>
+  <category>DARC</category>
+  <import>import darc</import>
+  <make>darc.layer2($log, $debug, $crc, $repair, $errorwidth)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+ <param>
+    <name>Log</name>
+    <key>log</key>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Debug</name>
+    <key>debug</key>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>CRC</name>
+    <key>crc</key>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Repair</name>
+    <key>repair</key>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Errorwidth</name>
+    <key>errorwidth</key>
+    <type>raw</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+    <vlen>24</vlen>
+  </source>
+</block>

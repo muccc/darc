@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<block>
+  <name>layer2_sync</name>
+  <key>darc_layer2_sync</key>
+  <category>DARC</category>
+  <import>import darc</import>
+  <make>darc.layer2_sync($log, $debug)</make>
+ <param>
+    <name>Log</name>
+    <key>log</key>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Debug</name>
+    <key>debug</key>
+    <type>raw</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+    <vlen>36</vlen>
+  </source>
+</block>

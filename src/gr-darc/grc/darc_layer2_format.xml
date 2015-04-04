@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<block>
+  <name>layer2_format</name>
+  <key>darc_layer2_format</key>
+  <category>DARC</category>
+  <import>import darc</import>
+  <make>darc.layer2_format($log, $debug, $crc, $repair, $errorwidth)</make>
+  <param>
+    <name>Log</name>
+    <key>log</key>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Debug</name>
+    <key>debug</key>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>CRC</name>
+    <key>crc</key>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Repair</name>
+    <key>repair</key>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Errorwidth</name>
+    <key>errorwidth</key>
+    <type>raw</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+    <vlen>36</vlen>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+    <vlen>24</vlen>
+  </source>
+</block>

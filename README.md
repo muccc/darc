@@ -3,15 +3,15 @@ Implementation for python and gnuradio, following ETSI EN 300 751 v1.2.1
 
 ## Contents
 
-./docs
+`./docs/`
 
 Documentation about the MVG Layer 6 Protocol, gained from reverse engineering
 
-./src/gr-darc
+`./src/gr-darc/`
 
 Gnuradio implementation of Layer 1 and Layer 2
 
-./src/py
+`./src/py/`
 
 Python implementation of Layer 2-5
 
@@ -23,14 +23,27 @@ There are several possibilities to use the DARC implementation:
 
 Receive and demodulate the DARC signal and dump the bitstream to a file, then open it using 
 
-python darc_prototype.py <filename>
+`python darc_prototype.py <filename>`
 
 ### Online
 
 Receive and demodulate the DARC signal and process it using the DARC Layer2 block. Use the UDP sink to provide the data on the network. Process the other layers using
 
-python darc_udp.py
+`python darc_udp.py`
 
+## Installation of the gr-darc out of tree module
+
+Info Used GnuRadio-Version: 3.7.5.1
+
+In the gr-darc folder:
+
+```
+  mkdir build
+  cd build
+  cmake ..
+  sudo make install
+  sudo ldconfig
+```
 
 ## Station IDs in Munich
 

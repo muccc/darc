@@ -13,7 +13,7 @@ from darccrc import Crc
 class DarcStack:
   # Constants
   PRINT_L3 = False
-  PRINT_L4 = True
+  PRINT_L4 = False
   PRINT_L5 = True
   REPAIR_L2 = True
   CRC_L2 = True
@@ -360,7 +360,7 @@ class DarcStack:
 
 
 
-      if True:
+      if False:
         print('l3\tBMCh\tDI\tSCh\tMtype\tRFA\tBLK\tDUP\tFNO\tUS\tLS')
         print('\t\t' + str(BMCh_DI)  + '\t' \
                      + str(BMCh_SCh) + '\t' \

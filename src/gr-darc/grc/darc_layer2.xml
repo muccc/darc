@@ -13,22 +13,26 @@
  <param>
     <name>Log</name>
     <key>log</key>
-    <type>raw</type>
+    <value>True</value>
+    <type>bool</type>
   </param>
   <param>
     <name>Debug</name>
     <key>debug</key>
-    <type>raw</type>
+    <value>True</value>
+    <type>bool</type>
   </param>
   <param>
     <name>CRC</name>
     <key>crc</key>
-    <type>raw</type>
+    <value>True</value>
+    <type>bool</type>
   </param>
   <param>
     <name>Repair</name>
     <key>repair</key>
-    <type>raw</type>
+    <value>True</value>
+    <type>bool</type>
   </param>
   <param>
     <name>Errorwidth</name>

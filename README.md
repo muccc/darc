@@ -27,7 +27,11 @@ Receive and demodulate the DARC signal and dump the bitstream to a file, then op
 
 ### Online
 
-Receive and demodulate the DARC signal and process it using the DARC Layer2 block. Use the UDP sink to provide the data on the network. Process the other layers using
+You can find the Gnurado Flowgraph here: 
+
+`src/gr-darc/apps/darc_rx.grc`
+
+Receive and demodulate the DARC signal and process it using the DARC Layer2 block. Use the UDP sink to provide the Layer 2 data on the network. Process the other layers using
 
 `python darc_udp.py`
 
@@ -69,9 +73,7 @@ In the gr-darc folder:
 
 ### Official
 
-* http://www.axentia.se/pt/ibus_display.html
-
-* http://www.axentia.se/db/DARC%20Technology.pdf
+* https://www.axentia.se/en/products/ibus-displays/battery-operated
 
 * http://www.etsi.org/deliver/etsi_en/300700_300799/300751/01.02.01_60/en_300751v010201p.pdf
 

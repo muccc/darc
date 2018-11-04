@@ -9,13 +9,16 @@ from __future__ import print_function
 
 from bitstring import BitArray
 from darccrc import Crc
+import datetime
+
+
 
 class DarcStack:
   # Constants
-  PRINT_L3 = False
-  PRINT_L4 = False
+  PRINT_L3 = True
+  PRINT_L4 = True
   PRINT_L5 = True
-  REPAIR_L2 = True
+  REPAIR_L2 = False
   CRC_L2 = True
   CRC_L3 = True
   CRC_L4 = True
@@ -446,7 +449,7 @@ class DarcStack:
 
     else:
       # unknown logical channel id
-      #print('layer3\terror\tunknown logical channel id')
+      print('layer3\terror\tunknown logical channel id')
       return
 
   def layer3_SeCh_COT(self, pMsgLen):
@@ -473,15 +476,43 @@ class DarcStack:
 
   def layer3_SeCh_AFT(self):
     if self.PRINT_L3:
-      print('layer3\terror\tSeCh AFT not implemented yet')
+      AFT_Offset = 0
+      AFT_Ecc = self.SeCh_data[0:8].uint
+      AFT_TSEId = self.SeCh_data[9:16].uint
+      AFT_Length = self.SeCh_data[16:24].uint
+
+      print('l3\tSeCh\t' + str(self.SeCh_data[0:8*(AFT_Length+3)]))
+      print('\t\tAFT Alternate Frequency Table')
+
+      while AFT_Offset < (AFT_Length):
+        AFT_FT = self.SeCh_data[24+AFT_Offset:26+AFT_Offset].uint
+        AFT_AFNUMBER = self.SeCh_data[26+AFT_Offset:32+AFT_Offset].uint
+        AFT_TunigFrequency = (self.SeCh_data[32+AFT_Offset:40+AFT_Offset].uint * 0.1) + 87.5
+        j = 0
+        if(AFT_AFNUMBER < 64):
+          while j < (AFT_AFNUMBER):
+            AFT_AlternateFrequency = (self.SeCh_data[40+AFT_Offset+(8*(AFT_AFNUMBER-1)):48+AFT_Offset+(8*(AFT_AFNUMBER-1))].uint * 0.1) + 87.5
+            print('\t\tFrametype: ' + str(AFT_FT) + 
+                  '\tTuning Frequency: '  + str(AFT_TunigFrequency) + ' Mhz' + 
+                  '\tAlternate Frequency: ' + str(AFT_AlternateFrequency) + ' Mhz'
+            )
+            j += 1
+          AFT_Offset += 8 * (AFT_AFNUMBER + 2)
+        else:
+          print('AF Numbers > 63 are not implemented yet!')   
       print('')
 
   def layer3_SeCh_SAFT(self):
     # 8.3.3.3
     if self.PRINT_L3:
-      print('layer3\terror\tSeCh SAFT not implemented yet')
-      print('')
 
+      SFT_Ecc = self.SeCh_data[0:8].uint
+      SAFT_TSEId = self.SeCh_data[9:16].uint
+      SAFT_Length = self.SeCh_data[16:24].uint
+
+      print('l3\tSeCh\t' + str(self.SeCh_data[0:8*(SAFT_Length+3)]))
+      print('\t\tSAFT Not implemented yet')
+      print('')
 
   def layer3_SeCh_TDPNT(self):
     if self.PRINT_L3:
@@ -631,6 +662,9 @@ class DarcStack:
     
   def layer5(self, pDataStart, pDataLength, pAddress):
     if self.PRINT_L5:
+      now = datetime.datetime.now()
+
+      print("== %s ===========================" % now.strftime("%Y-%m-%d %H:%M:%S"))
       idx = pDataStart
       L5_TYPE = self.LMCh_data[idx:idx+4]
 
@@ -712,4 +746,4 @@ class DarcStack:
       else:
         print('l5\terror\ttype not implemented yet')
 
-      print('===========================================================')
+      

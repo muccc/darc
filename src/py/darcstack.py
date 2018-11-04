@@ -15,8 +15,8 @@ import datetime
 
 class DarcStack:
   # Constants
-  PRINT_L3 = True
-  PRINT_L4 = True
+  PRINT_L3 = False
+  PRINT_L4 = False
   PRINT_L5 = True
   REPAIR_L2 = False
   CRC_L2 = True
@@ -195,7 +195,8 @@ class DarcStack:
         elif '0x6' == SeCh_TYPE:
           self.layer3_SeCh_SCOT(SeCh_ML.uint)
         else:
-          print('layer3\terror\tunkown SeCh TYPE')
+          if self.PRINT_L3:
+            print('layer3\terror\tunkown SeCh TYPE')
 
 
     elif SILCh == '0x9':    # Short Message (SMCh)
@@ -448,9 +449,9 @@ class DarcStack:
 
 
     else:
-      # unknown logical channel id
-      print('layer3\terror\tunknown logical channel id')
-      return
+      if self.PRINT_L3:# unknown logical channel id
+        print('layer3\terror\tunknown logical channel id')
+        return
 
   def layer3_SeCh_COT(self, pMsgLen):
 

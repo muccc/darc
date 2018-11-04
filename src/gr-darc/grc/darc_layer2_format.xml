@@ -1,33 +1,46 @@
 <?xml version="1.0"?>
 <block>
-  <name>layer2_format</name>
+  <name>DARC Layer 2 Format</name>
   <key>darc_layer2_format</key>
-  <category>DARC</category>
+  <category>[DARC]</category>
   <import>import darc</import>
   <make>darc.layer2_format($log, $debug, $crc, $repair, $errorwidth)</make>
   <param>
-    <name>Log</name>
+    <name>Log Output</name>
     <key>log</key>
-    <type>raw</type>
+    <value>True</value>
+    <type>enum</type>
+    <option><name>True</name><key>True</key></option>
+    <option><name>False</name><key>False</key></option>
   </param>
   <param>
-    <name>Debug</name>
+    <name>Debug Output</name>
     <key>debug</key>
-    <type>raw</type>
+    <value>True</value>
+    <type>enum</type>
+    <option><name>True</name><key>True</key></option>
+    <option><name>False</name><key>False</key></option>
   </param>
   <param>
-    <name>CRC</name>
+    <name>Check CRC</name>
     <key>crc</key>
-    <type>raw</type>
+    <value>True</value>
+    <type>enum</type>
+    <option><name>True</name><key>True</key></option>
+    <option><name>False</name><key>False</key></option>
   </param>
   <param>
-    <name>Repair</name>
+    <name>Repair Layer 2</name>
     <key>repair</key>
-    <type>raw</type>
+    <value>True</value>
+    <type>enum</type>
+    <option><name>True</name><key>True</key></option>
+    <option><name>False</name><key>False</key></option>
   </param>
   <param>
     <name>Errorwidth</name>
     <key>errorwidth</key>
+    <value>10</value>
     <type>raw</type>
   </param>
   <sink>
